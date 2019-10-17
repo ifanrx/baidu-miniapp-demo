@@ -1,0 +1,12 @@
+<view class="input-item">
+  <view class="input-group">
+    <view class="input-label">{{label}}</view>
+    <input
+      value="{{value}}"
+      type="{{type}}"
+      placeholder="{{placeholder}}"
+      placeholder-class="placeholder"
+      bindinput="bindInput" />
+  </view>
+  <view s-if="isShowLine" class="split-line"></view>
+</view>

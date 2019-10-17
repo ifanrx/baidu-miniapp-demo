@@ -1,0 +1,43 @@
+.status-panel {
+  padding: 10px;
+  background: #fff;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.status-panel view {
+  line-height: 2;
+  color: #333333;
+}
+
+.status-info {
+  margin: 10px 0;
+}
+
+.status-panel .user-info {
+  margin-top: 20px;
+}
+
+.status-panel .user-info-name {
+  text-align: center;
+}
+
+.status-panel .user-info-avatar {
+  margin: 0 auto;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.btn-group {
+  margin: 10px;
+}
+
+.f-margin-bottom-0 {
+  margin-bottom: 0;
+}
+
+button {
+  margin-bottom: 20rpx;
+}

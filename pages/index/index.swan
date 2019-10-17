@@ -1,0 +1,32 @@
+<view>
+  <view class="banner">
+    <image src="../../assets/images/logo.png" mode="aspectFit" />
+    <text>知晓云 SDK 官方示例</text>
+  </view>
+  <list>
+    <list-item
+      bindclick="navigateToPage"
+      url="../auth/auth"
+    >
+      <view>登入 & 登出</view>
+    </list-item>
+    <list-item
+      bindclick="navigateToPage"
+      url="../schema-change/schema-change"
+    >
+      <view>schema 增删改测试</view>
+    </list-item>
+    <list-item
+      bindclick="navigateToPage"
+      url="../schema-query/schema-query"
+    >
+      <view>schema 查找测试</view>
+    </list-item>
+    <list-item
+      bindclick="navigateToPage"
+      url="../invoke-function/invoke-function"
+    >
+      <view>触发云函数</view>
+    </list-item>
+  </list>
+</view>

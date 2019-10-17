@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "触发云函数",
+  "usingComponents": {
+    "card": "/components/card/card",
+    "input-item": "/components/input-item/input-item"
+  }
+}

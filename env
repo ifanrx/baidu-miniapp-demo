@@ -1,0 +1,3 @@
+// 请把文件名修改成 env.js
+
+export const BAAS_CLIENT_ID = '从 BaaS 后台获取 clientID'

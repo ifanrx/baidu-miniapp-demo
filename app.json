@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/auth/auth",
+    "pages/schema-change/schema-change",
+    "pages/schema-query/schema-query",
+    "pages/invoke-function/invoke-function"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#222"
+  }
+}

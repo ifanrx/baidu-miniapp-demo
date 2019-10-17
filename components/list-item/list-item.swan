@@ -1,0 +1,8 @@
+<!-- 这是自定义组件的内部QML结构 -->
+<view class="list-item" data-url="{{url}}" bindtap="onTap">
+  <view class="content">
+    <slot></slot>
+  </view>
+  <view class="arrow" s-if="arrow"></view>
+  <view class="bottom-line" s-if="last"></view>
+</view>

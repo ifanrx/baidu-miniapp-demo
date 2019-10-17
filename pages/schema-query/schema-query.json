@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "Schema 查找测试",
+  "usingComponents":{
+    "card": "/components/card/card",
+    "stepper": "/components/stepper/stepper"
+  }
+}

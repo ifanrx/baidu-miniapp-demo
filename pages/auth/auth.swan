@@ -1,0 +1,96 @@
+<view class="page-container">
+  <view class="status-panel">
+    <view class="status-info">
+      <view>
+        <text>当前登录状态 : </text>
+        <text s-if="isUserLogined" style="color: green;">{{' 已登录'}}</text>
+        <text s-else style="color: red;">{{' 未登录'}}</text>
+      </view>
+      <view>
+        <text>百度账号绑定状态 : </text>
+        <text s-if="baiduLinkStatus == 0">{{' 未知'}}</text>
+        <text s-elif="baiduLinkStatus == 1" style="color: green;">{{' 已绑定'}}</text>
+        <text s-else style="color: red;">{{' 未绑定'}}</text>
+      </view>
+    </view>
+    <block s-if="isUserLogined">
+      <view s-if="name && avatar" class="user-info">
+        <image class="user-info-avatar" src="{{avatar}}" />
+        <view class="user-info-name">{{name}}</view>
+      </view>
+      <button s-if="{{baiduLinkStatus == 0}}" type="primary" class="f-margin-bottom-0" bindtap="getCurrentUser">获取当前用户对象</button>
+    </block>
+    <block s-if="{{baiduLinkStatus == -1}}">
+      <button type="primary" bindtap="linkBaidu">关联百度账号（静默登录）</button>
+      <button type="primary" class="f-margin-bottom-0" bindtap="forceLinkBaidu" data-force-login>关联百度账号（强制登录）</button>
+    </block>
+  </view>
+
+  <view class="card">
+    <text class="card-title">注册</text>
+    <view class="card-comments">
+      <view>swan.BaaS.auth.register({username, password})</view>
+      <view>通过邮箱（或用户名）和密码创建用户，之后可以在各个平台登录</view>
+    </view>
+    <input-item
+      label="账号"
+      placeholder="请输入用户名"
+      type="text"
+      value="{{registerName}}"
+      bindinputchange="bindRegisterName"
+      isShowLine="{{true}}"
+    >
+    </input-item>
+    <input-item
+      label="密码"
+      value="{{registerPassword}}"
+      placeholder="请输入密码"
+      bindinputchange="bindRegisterPassword"
+      password
+    >
+    </input-item>
+    <button type="primary" class="f-margin-bottom-0" bindtap="register">注册</button>
+  </view>
+
+  <view class="card">
+    <text class="card-title">登录</text>
+    <view class="card-comments">
+      <view>swan.BaaS.auth.login({username, password})</view>
+      <view>使用用户名（或邮箱）和密码登录</view>
+    </view>
+    <input-item
+      label="账号"
+      data-field="name"
+      placeholder="请输入用户名"
+      type="text"
+      value="{{loginName}}"
+      bindinputchange="bindLoginName" 
+      isShowLine="{{true}}"
+    >
+    </input-item>
+    <input-item
+      label="密码"
+      value="{{loginPassword}}"
+      placeholder="请输入密码"
+      bindinputchange="bindLoginPassword"
+    >
+    </input-item>
+    <button type="primary" class="f-margin-bottom-0" bindtap="login">账号邮箱登录</button>
+  </view>
+
+  <view class="card">
+    <text class="card-title">百度登录</text>
+    <view class="card-comments">
+      <view>swan.BaaS.auth.loginWithBaidu({forceLogin: boolean})</view>
+      <view>百度一键登录</view>
+    </view>
+    <button type="primary" bindtap="baiduSilentLogin">静默登录</button>
+    <button type="primary" open-type="getUserInfo" class="f-margin-bottom-0" bindtap="baiduForceLogin">强制登录</button>
+  </view>
+
+  <view class="card">
+    <text class="card-title">登出/忘记密码</text>
+    <button type="primary" bindtap="signout">登出</button>
+    <button type="primary" class="f-margin-bottom-0" bindtap="resetPassword">忘记密码</button>
+  </view>
+</view>
