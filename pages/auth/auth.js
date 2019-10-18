@@ -131,15 +131,6 @@ Page({
     })
   },
 
-  resetPassword() {
-    app.BaaS.auth.requestPasswordReset().then((res) => {
-      showSuccessToast()
-    }, err => {
-      showFailToast(err.message)
-      console.log(err)
-    })
-  },
-
   baiduSilentLogin() {
     this.cleanSession()
     app.BaaS.auth.loginWithBaidu().then((res) => {
@@ -152,11 +143,9 @@ Page({
     })
   },
 
-  baiduForceLogin(data) {
+  baiduForceLogin() {
     this.cleanSession()
-    console.log(data)
-
-    app.BaaS.auth.loginWithBaidu(data)
+    app.BaaS.auth.loginWithBaidu({forceLogin: true})
       .then(res => {
         this.checkLoginStatus()
         console.log(res)

@@ -30,7 +30,7 @@
     <text class="card-title">注册</text>
     <view class="card-comments">
       <view>swan.BaaS.auth.register({username, password})</view>
-      <view>通过邮箱（或用户名）和密码创建用户，之后可以在各个平台登录</view>
+      <view>通过用户名和密码创建用户，之后可以在各个平台登录</view>
     </view>
     <input-item
       label="账号"
@@ -56,7 +56,7 @@
     <text class="card-title">登录</text>
     <view class="card-comments">
       <view>swan.BaaS.auth.login({username, password})</view>
-      <view>使用用户名（或邮箱）和密码登录</view>
+      <view>使用用户名和密码登录</view>
     </view>
     <input-item
       label="账号"
@@ -75,7 +75,7 @@
       bindinputchange="bindLoginPassword"
     >
     </input-item>
-    <button type="primary" class="f-margin-bottom-0" bindtap="login">账号邮箱登录</button>
+    <button type="primary" class="f-margin-bottom-0" bindtap="login">账号登录</button>
   </view>
 
   <view class="card">
@@ -89,8 +89,7 @@
   </view>
 
   <view class="card">
-    <text class="card-title">登出/忘记密码</text>
+    <text class="card-title">登出</text>
     <button type="primary" bindtap="signout">登出</button>
-    <button type="primary" class="f-margin-bottom-0" bindtap="resetPassword">忘记密码</button>
   </view>
 </view>
